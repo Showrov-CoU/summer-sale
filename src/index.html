@@ -62,7 +62,7 @@
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
             <!-- card1 -->
             <div
-              onclick="productNameAndPrice(this)"
+              onclick="getProductNameAndPrice(this)"
               class="w-60 min-h-fit bg-[#FFF] shadow-md rounded-md"
             >
               <figure
@@ -111,7 +111,7 @@
             </div>
             <!-- card2 -->
             <div
-              onclick="productNameAndPrice(this)"
+              onclick="getProductNameAndPrice(this)"
               class="w-60 min-h-fit bg-[#FFF] shadow-md rounded-md"
             >
               <figure
@@ -160,7 +160,7 @@
             </div>
             <!-- card3 -->
             <div
-              onclick="productNameAndPrice(this)"
+              onclick="getProductNameAndPrice(this)"
               class="w-60 min-h-fit bg-[#FFF] shadow-md rounded-md"
             >
               <figure
@@ -219,7 +219,7 @@
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
             <!-- card1 -->
             <div
-              onclick="productNameAndPrice(this)"
+              onclick="getProductNameAndPrice(this)"
               class="w-60 min-h-fit bg-[#FFF] shadow-md rounded-md"
             >
               <figure
@@ -268,7 +268,7 @@
             </div>
             <!-- card2 -->
             <div
-              onclick="productNameAndPrice(this)"
+              onclick="getProductNameAndPrice(this)"
               class="w-60 min-h-fit bg-[#FFF] shadow-md rounded-md"
             >
               <figure
@@ -311,13 +311,13 @@
                   Full Jersey Set
                 </p>
                 <p class="w-fit mx-auto text-[#11111180] text-sm font-semibold">
-                   <span>69.00</span> TK
+                  <span>69.00</span> TK
                 </p>
               </div>
             </div>
             <!-- card3 -->
             <div
-              onclick="productNameAndPrice(this)"
+              onclick="getProductNameAndPrice(this)"
               class="w-60 min-h-fit bg-[#FFF] shadow-md rounded-md"
             >
               <figure
@@ -376,7 +376,7 @@
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
             <!-- card1 -->
             <div
-              onclick="productNameAndPrice(this)"
+              onclick="getProductNameAndPrice(this)"
               class="w-60 min-h-fit bg-[#FFF] shadow-md rounded-md"
             >
               <figure
@@ -419,13 +419,13 @@
                   Single Relax Chair
                 </p>
                 <p class="w-fit mx-auto text-[#11111180] text-sm font-semibold">
-                   <span>185.00</span> TK
+                  <span>185.00</span> TK
                 </p>
               </div>
             </div>
             <!-- card2 -->
             <div
-              onclick="productNameAndPrice(this)"
+              onclick="getProductNameAndPrice(this)"
               class="w-60 min-h-fit bg-[#FFF] shadow-md rounded-md"
             >
               <figure
@@ -468,13 +468,13 @@
                   Children play
                 </p>
                 <p class="w-fit mx-auto text-[#11111180] text-sm font-semibold">
-                   <span>299.00</span> TK
+                  <span>299.00</span> TK
                 </p>
               </div>
             </div>
             <!-- card3 -->
             <div
-              onclick="productNameAndPrice(this)"
+              onclick="getProductNameAndPrice(this)"
               class="w-60 min-h-fit bg-[#FFF] shadow-md rounded-md"
             >
               <figure
@@ -537,7 +537,8 @@
               class="border border-1 px-2 py-1 rounded-s-md"
             />
             <button
-              class="bg-[#E527B2] text-white px-4 py-[6px] font-semibold text-sm rounded-e-md flex items-center disabled:opacity-50"
+              id="applyBtn"
+              class="bg-[#E527B2] text-white px-4 py-[6px] font-semibold text-sm rounded-e-md flex items-center opacity-30"
               disabled
             >
               Apply
@@ -547,34 +548,48 @@
 
         <div class="bg-[#FFFFFF] pt-5 pb-7 px-5 rounded-md relative">
           <div class="min-h-[6rem]">
-            <p class="text-base font-bold text-[#111] w-fit mx-auto">
+            <p class="text-[24px] font-bold text-[#111] w-fit mx-auto">
               Products list
             </p>
+            <div id="productsList" class="text-base font-bold py-4"></div>
           </div>
           <hr />
           <div class="space-y-2 py-2">
-            <p class="text-base text-[#111] font-semibold">
-              Total price:
-              <span class="text-[#11111180] text-lg font-semibold"
-                >00.00<span>TK</span></span
+            <p>
+              <span class="text-base text-[#111] font-semibold"
+                >Total price:</span
               >
+              <span
+                id="totalPrice"
+                class="text-[#11111180] text-lg font-semibold"
+                >00.00</span
+              >
+              <span class="text-[#11111180] text-lg font-semibold">TK</span>
             </p>
-            <p class="text-base text-[#111] font-semibold">
-              Discount:
-              <span class="text-[#11111180] text-lg font-semibold"
-                >00.00<span>TK</span></span
+            <p>
+              <span class="text-base text-[#111] font-semibold">Discount:</span>
+              <span
+                id="totalPrice"
+                class="text-[#11111180] text-lg font-semibold"
+                >00.00</span
               >
+              <span class="text-[#11111180] text-lg font-semibold">TK</span>
             </p>
-            <p class="text-base text-[#111] font-semibold">
-              Total:
-              <span class="text-[#11111180] text-lg font-semibold"
-                >00.00<span>TK</span></span
+            <p>
+              <span class="text-base text-[#111] font-semibold">Total:</span>
+              <span
+                id="totalPrice"
+                class="text-[#11111180] text-lg font-semibold"
+                >00.00</span
               >
+              <span class="text-[#11111180] text-lg font-semibold">TK</span>
             </p>
           </div>
           <hr />
           <button
-            class="w-64 bg-[#E527B2] hover:bg-[#a71a81] text-white px-4 py-[6px] font-semibold text-sm rounded-md mt-5 absolute -bottom-4 left-1/2 transform -translate-x-1/2"
+            id="purchaseBtn"
+            class="w-64 bg-[#E527B2] hover:bg-[#a71a81] text-white px-4 py-[6px] font-semibold text-sm rounded-md mt-5 absolute -bottom-4 left-1/2 transform -translate-x-1/2 opacity-30"
+            disabled
           >
             Make Purchase
           </button>
