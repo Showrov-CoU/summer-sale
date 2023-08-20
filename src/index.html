@@ -530,15 +530,16 @@
           <h1 class="font-semibold mb-2">Have coupon?</h1>
           <div class="flex">
             <input
+              id="coupon"
               type="text"
               name="text"
               id=""
               placeholder="Coupon code"
-              class="border border-1 px-2 py-1 rounded-s-md"
+              class="border border-1 border-[#E527B2] border-e-0 px-2 py-1 rounded-s-md focus:outline-none"
             />
             <button
               id="applyBtn"
-              class="bg-[#E527B2] text-white px-4 py-[6px] font-semibold text-sm rounded-e-md flex items-center opacity-30"
+              class="bg-[#E527B2] hover:bg-[#a71a81] text-white px-4 py-[6px] font-semibold text-sm rounded-e-md flex items-center opacity-30"
               disabled
             >
               Apply
@@ -569,7 +570,7 @@
             <p>
               <span class="text-base text-[#111] font-semibold">Discount:</span>
               <span
-                id="totalPrice"
+                id="discount"
                 class="text-[#11111180] text-lg font-semibold"
                 >00.00</span
               >
@@ -578,7 +579,7 @@
             <p>
               <span class="text-base text-[#111] font-semibold">Total:</span>
               <span
-                id="totalPrice"
+                id="total"
                 class="text-[#11111180] text-lg font-semibold"
                 >00.00</span
               >

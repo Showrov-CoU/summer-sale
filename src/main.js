@@ -19,7 +19,7 @@ const totalPriceCalculation = (totalPriceId, productPrice) => {
   let totalPrice = parseFloat(document.getElementById(totalPriceId).innerText);
   totalPrice += productPrice;
 
-  setTotalPrice("totalPrice", totalPrice);
+  setPrice("totalPrice", totalPrice);
 
   if (totalPrice >= 1) {
     buttonAnable("purchaseBtn");
@@ -29,8 +29,8 @@ const totalPriceCalculation = (totalPriceId, productPrice) => {
   }
 };
 
-const setTotalPrice = (totalPriceId, sum) => {
-  document.getElementById(totalPriceId).innerText = sum.toFixed(2);
+const setPrice = (PriceId, Price) => {
+  document.getElementById(PriceId).innerText = Price.toFixed(2);
 };
 
 const buttonAnable = (btnId) => {
@@ -39,3 +39,23 @@ const buttonAnable = (btnId) => {
   btn.classList.remove("opacity-30");
 };
 
+document.getElementById("coupon").addEventListener("keyup", () => {
+  const couponCode = document.getElementById("coupon").value;
+  const totalPrice = parseFloat(
+    document.getElementById("totalPrice").innerText
+  );
+  if (couponCode === "SELL200") {
+    discountCalculation(totalPrice);
+  }
+});
+
+const discountCalculation = (totalPrice) => {
+  let discout = 20;
+  let discoutPrice = totalPrice * (discout / 100);
+  let total = totalPrice - discoutPrice;
+
+  document.getElementById("applyBtn").addEventListener("click", () => {
+    setPrice("discount", discoutPrice);
+    setPrice("total", total);
+  });
+};

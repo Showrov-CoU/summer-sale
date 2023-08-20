@@ -1186,6 +1186,20 @@ html {
           mask-image: url("data:image/svg+xml,%3csvg width='192' height='180' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill='black' d='m96 153.044-58.779 26.243 7.02-63.513L.894 68.481l63.117-13.01L96 0l31.989 55.472 63.117 13.01-43.347 47.292 7.02 63.513z' fill-rule='evenodd'/%3e%3c/svg%3e");
 }
 
+:where(.menu li:not(.menu-title):not(.disabled) > *:not(ul):not(details):not(.menu-title)):not(summary):not(.active).focus,
+  :where(.menu li:not(.menu-title):not(.disabled) > *:not(ul):not(details):not(.menu-title)):not(summary):not(.active):focus,
+  :where(.menu li:not(.menu-title):not(.disabled) > *:not(ul):not(details):not(.menu-title)):is(summary):not(.active):focus-visible,
+  :where(.menu li:not(.menu-title):not(.disabled) > details > summary:not(.menu-title)):not(summary):not(.active).focus,
+  :where(.menu li:not(.menu-title):not(.disabled) > details > summary:not(.menu-title)):not(summary):not(.active):focus,
+  :where(.menu li:not(.menu-title):not(.disabled) > details > summary:not(.menu-title)):is(summary):not(.active):focus-visible {
+  cursor: pointer;
+  background-color: hsl(var(--bc) / 0.1);
+  --tw-text-opacity: 1;
+  color: hsl(var(--bc) / var(--tw-text-opacity));
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
 .mockup-phone .display {
   overflow: hidden;
   border-radius: 40px;
@@ -1574,6 +1588,23 @@ html {
   border-width: 1px;
 }
 
+.border-e {
+  border-inline-end-width: 1px;
+}
+
+.border-e-0 {
+  border-inline-end-width: 0px;
+}
+
+.border-\[\] {
+  border-color: ;
+}
+
+.border-\[\#E527B2\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(229 39 178 / var(--tw-border-opacity));
+}
+
 .bg-\[\#1111\] {
   background-color: #1111;
 }
@@ -1763,6 +1794,19 @@ html {
 .hover\:bg-\[\#a71a81\]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(167 26 129 / var(--tw-bg-opacity));
+}
+
+.focus\:border:focus {
+  border-width: 1px;
+}
+
+.focus\:border-0:focus {
+  border-width: 0px;
+}
+
+.focus\:outline-none:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
 }
 
 .disabled\:opacity-50:disabled {
