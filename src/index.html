@@ -15,7 +15,7 @@
   </head>
   <body class="font-work sans">
     <header
-      class="min-h-fit max-w-screen-xl bg-[#F9F6E2] md:px-16 lg:px-36 mx-auto"
+      class="min-h-fit max-w-screen-xl bg-[#F9F6E2] md:px-16 lg:px-32 mx-auto"
     >
       <div
         class="banner w-full flex justify-center items-center gap-0 md:gap-5"
@@ -47,13 +47,19 @@
         </div>
       </div>
     </header>
-    <main class="min-h-fit max-w-screen-xl bg-[#F8F8F8] flex">
+    <main
+      class="max-w-screen-xl px-10 md:px-16 py-10 md:py-16 mx-auto bg-[#F8F8F8] flex flex-col lg:flex-row gap-3"
+    >
       <!-- left part -->
-      <div>
+      <div class="grow flex flex-col items-center gap-10 md:gap-8">
         <!-- Kitchenware -->
         <div>
-          <h1>Kitchenware</h1>
-          <div class="grid grid-cols-3">
+          <h1
+            class="text-[#111] text-xl font-bold mb-4 text-center md:text-start"
+          >
+            Kitchenware
+          </h1>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
             <!-- card1 -->
             <div class="w-64 min-h-fit bg-[#FFF] shadow-md rounded-md">
               <figure
@@ -196,8 +202,12 @@
         </div>
         <!-- Sportsware -->
         <div>
-          <h1>Sportswear</h1>
-          <div class="grid grid-cols-3">
+          <h1
+            class="text-[#111] text-xl font-bold mb-4 text-center md:text-start"
+          >
+            Sportswear
+          </h1>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
             <!-- card1 -->
             <div class="w-64 min-h-fit bg-[#FFF] shadow-md rounded-md">
               <figure
@@ -338,10 +348,14 @@
             </div>
           </div>
         </div>
-        <!-- Furiture -->
+        <!-- Furniture -->
         <div>
-          <h1>Furiture</h1>
-          <div class="grid grid-cols-3">
+          <h1
+            class="text-[#111] text-xl font-bold mb-4 text-center md:text-start"
+          >
+            Furniture
+          </h1>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
             <!-- card1 -->
             <div class="w-64 min-h-fit bg-[#FFF] shadow-md rounded-md">
               <figure
@@ -484,13 +498,19 @@
         </div>
       </div>
       <!-- right bar -->
-      <div>
-        <div class="bg-[#FFFFFF]">
-          <h1>Have coupon?</h1>
+      <div class="pt-11 w-fit mx-auto">
+        <div class="bg-[#FFFFFF] p-5 rounded-md ">
+          <h1 class="font-semibold mb-2">Have coupon?</h1>
           <div class="flex">
-            <input type="text" name="text" id="" placeholder="Coupon code" class="border border-1"/>
+            <input
+              type="text"
+              name="text"
+              id=""
+              placeholder="Coupon code"
+              class="border border-1 px-2 py-1 rounded-s-md"
+            />
             <button
-              class="bg-[#E527B2] text-white px-4 py-[6px] font-semibold text-sm rounded-e-md"
+              class="bg-[#E527B2] text-white px-4 py-[6px] font-semibold text-sm rounded-e-md flex items-center disabled:opacity-50" disabled
             >
               Apply
             </button>
