@@ -18,11 +18,11 @@ const putItemsInProductList = (sectionId, productName) => {
 const totalPriceCalculation = (totalPriceId, productPrice) => {
   let totalPrice = parseFloat(document.getElementById(totalPriceId).innerText);
   totalPrice += productPrice;
-
   setPrice("totalPrice", totalPrice);
-
   if (totalPrice >= 1) {
     buttonAnable("purchaseBtn");
+    const label = document.getElementById("purchaseBtn");
+    label.setAttribute("for", "my_modal_6");
   }
   if (totalPrice >= 200) {
     buttonAnable("applyBtn");
@@ -60,7 +60,6 @@ const discountCalculation = (totalPrice) => {
   let discout = 20;
   let discoutPrice = totalPrice * (discout / 100);
   let total = totalPrice - discoutPrice;
-
   document.getElementById("applyBtn").addEventListener("click", () => {
     setPrice("discount", discoutPrice);
     setPrice("total", total);
@@ -70,22 +69,22 @@ const discountCalculation = (totalPrice) => {
 document.getElementById("goHome").addEventListener("click", () => {
   //..............clear text input field.................//
   document.getElementById("coupon").value = "";
-
   // ................reset selected items................//
   const listContainer = document.getElementById("productsList");
   const items = listContainer.querySelectorAll("p");
   items.forEach((item) => {
     listContainer.removeChild(item);
   });
-
   // ..............clear price................//
   let value = "00.00";
   let initialValue = parseFloat(value);
   setPrice("totalPrice", initialValue);
   setPrice("discount", initialValue);
   setPrice("total", initialValue);
-
-  //...............Disaable button.............//
+  //...............Disable button.............//
   buttonDisable("purchaseBtn");
   buttonDisable("applyBtn");
+
+  const label = document.getElementById("purchaseBtn");
+  label.removeAttribute("for");
 });
