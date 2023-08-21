@@ -40,8 +40,9 @@ const buttonAnable = (btnId) => {
 };
 
 const buttonDisable = (btnId) => {
+  console.log("ok");
   let btn = document.getElementById(btnId);
-  btn.setAttribute("disabled");
+  btn.setAttribute("disabled", "true");
   btn.classList.add("opacity-30");
 };
 
@@ -67,6 +68,7 @@ const discountCalculation = (totalPrice) => {
 };
 
 document.getElementById("goHome").addEventListener("click", () => {
+  //..............clear text input field.................//
   document.getElementById("coupon").value = "";
 
   // ................reset selected items................//
@@ -82,4 +84,8 @@ document.getElementById("goHome").addEventListener("click", () => {
   setPrice("totalPrice", initialValue);
   setPrice("discount", initialValue);
   setPrice("total", initialValue);
+
+  //...............Disaable button.............//
+  buttonDisable("purchaseBtn");
+  buttonDisable("applyBtn");
 });
