@@ -39,6 +39,12 @@ const buttonAnable = (btnId) => {
   btn.classList.remove("opacity-30");
 };
 
+const buttonDisable = (btnId) => {
+  let btn = document.getElementById(btnId);
+  btn.setAttribute("disabled");
+  btn.classList.add("opacity-30");
+};
+
 document.getElementById("coupon").addEventListener("keyup", () => {
   const couponCode = document.getElementById("coupon").value;
   const totalPrice = parseFloat(
@@ -59,3 +65,21 @@ const discountCalculation = (totalPrice) => {
     setPrice("total", total);
   });
 };
+
+document.getElementById("goHome").addEventListener("click", () => {
+  document.getElementById("coupon").value = "";
+
+  // ................reset selected items................//
+  const listContainer = document.getElementById("productsList");
+  const items = listContainer.querySelectorAll("p");
+  items.forEach((item) => {
+    listContainer.removeChild(item);
+  });
+
+  // ..............clear price................//
+  let value = "00.00";
+  let initialValue = parseFloat(value);
+  setPrice("totalPrice", initialValue);
+  setPrice("discount", initialValue);
+  setPrice("total", initialValue);
+});

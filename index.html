@@ -63,7 +63,7 @@
             <!-- card1 -->
             <div
               onclick="getProductNameAndPrice(this)"
-              class="w-60 min-h-fit bg-[#FFF] shadow-md rounded-md"
+              class="w-60 min-h-fit bg-[#FFF] shadow-md rounded-md cursor-pointer"
             >
               <figure
                 class="w-56 h-40 bg-[#1111] rounded-md flex justify-center items-center mx-auto mt-2"
@@ -112,7 +112,7 @@
             <!-- card2 -->
             <div
               onclick="getProductNameAndPrice(this)"
-              class="w-60 min-h-fit bg-[#FFF] shadow-md rounded-md"
+              class="w-60 min-h-fit bg-[#FFF] shadow-md rounded-md cursor-pointer"
             >
               <figure
                 class="w-56 h-40 bg-[#1111] rounded-md flex justify-center items-center mx-auto mt-2"
@@ -161,7 +161,7 @@
             <!-- card3 -->
             <div
               onclick="getProductNameAndPrice(this)"
-              class="w-60 min-h-fit bg-[#FFF] shadow-md rounded-md"
+              class="w-60 min-h-fit bg-[#FFF] shadow-md rounded-md cursor-pointer"
             >
               <figure
                 class="w-56 h-40 bg-[#1111] rounded-md flex justify-center items-center mx-auto mt-2"
@@ -220,7 +220,7 @@
             <!-- card1 -->
             <div
               onclick="getProductNameAndPrice(this)"
-              class="w-60 min-h-fit bg-[#FFF] shadow-md rounded-md"
+              class="w-60 min-h-fit bg-[#FFF] shadow-md rounded-md cursor-pointer"
             >
               <figure
                 class="w-56 h-40 bg-[#1111] rounded-md flex justify-center items-center mx-auto mt-2"
@@ -269,7 +269,7 @@
             <!-- card2 -->
             <div
               onclick="getProductNameAndPrice(this)"
-              class="w-60 min-h-fit bg-[#FFF] shadow-md rounded-md"
+              class="w-60 min-h-fit bg-[#FFF] shadow-md rounded-md cursor-pointer"
             >
               <figure
                 class="w-56 h-40 bg-[#1111] rounded-md flex justify-center items-center mx-auto mt-2"
@@ -318,7 +318,7 @@
             <!-- card3 -->
             <div
               onclick="getProductNameAndPrice(this)"
-              class="w-60 min-h-fit bg-[#FFF] shadow-md rounded-md"
+              class="w-60 min-h-fit bg-[#FFF] shadow-md rounded-md cursor-pointer"
             >
               <figure
                 class="w-56 h-40 bg-[#1111] rounded-md flex justify-center items-center mx-auto mt-2"
@@ -377,7 +377,7 @@
             <!-- card1 -->
             <div
               onclick="getProductNameAndPrice(this)"
-              class="w-60 min-h-fit bg-[#FFF] shadow-md rounded-md"
+              class="w-60 min-h-fit bg-[#FFF] shadow-md rounded-md cursor-pointer"
             >
               <figure
                 class="w-56 h-40 bg-[#1111] rounded-md flex justify-center items-center mx-auto mt-2"
@@ -426,7 +426,7 @@
             <!-- card2 -->
             <div
               onclick="getProductNameAndPrice(this)"
-              class="w-60 min-h-fit bg-[#FFF] shadow-md rounded-md"
+              class="w-60 min-h-fit bg-[#FFF] shadow-md rounded-md cursor-pointer"
             >
               <figure
                 class="w-56 h-40 bg-[#1111] rounded-md flex justify-center items-center mx-auto mt-2"
@@ -475,7 +475,7 @@
             <!-- card3 -->
             <div
               onclick="getProductNameAndPrice(this)"
-              class="w-60 min-h-fit bg-[#FFF] shadow-md rounded-md"
+              class="w-60 min-h-fit bg-[#FFF] shadow-md rounded-md cursor-pointer"
             >
               <figure
                 class="w-56 h-40 bg-[#1111] rounded-md flex justify-center items-center mx-auto mt-2"
@@ -583,13 +583,39 @@
             </p>
           </div>
           <hr />
-          <button
+          <label
+            for="my_modal_6"
             id="purchaseBtn"
-            class="w-64 bg-[#E527B2] hover:bg-[#a71a81] text-white px-4 py-[6px] font-semibold text-sm rounded-md mt-5 absolute -bottom-4 left-1/2 transform -translate-x-1/2 opacity-30"
-            disabled
+            class="w-64 bg-[#E527B2] hover:bg-[#a71a81] text-white px-4 py-[6px] font-semibold text-sm rounded-md mt-5 absolute -bottom-4 left-1/2 transform -translate-x-1/2 opacity-30 text-center"
           >
             Make Purchase
-          </button>
+          </label>
+
+          <!-- The button to open modal -->
+          <!-- <label for="my_modal_7" class="btn">open modal</label> -->
+
+          <input type="checkbox" id="my_modal_6" class="modal-toggle" />
+          <div id="modalId" class="modal">
+            <div class="modal-box">
+              <img src="/images/congo.png" alt="" class="mx-auto" />
+              <h1 class="pt-4 text-3xl font-bold w-fit mx-auto">
+                Congratulations
+              </h1>
+              <p class="pt-2 pb-4 w-fit mx-auto text-sm">
+                Your Purchase the product
+              </p>
+              <div class="modal-action">
+                <label
+                  for="my_modal_6"
+                  id="goHome"
+                  class="block bg-[#E527B2] hover:bg-[#a71a81] text-white px-6 py-[8px] font-semibold text-sm rounded-md w-fit mx-auto"
+                >
+                  Go Home
+                </label>
+              </div>
+            </div>
+            <!-- <label class="modal-backdrop" for="my_modal_7">Close</label> -->
+          </div>
         </div>
       </div>
     </main>
