@@ -45,6 +45,8 @@ document.getElementById("applyBtn").addEventListener("click", () => {
       document.getElementById("totalPrice").innerText
     );
     discountCalculation(totalPrice);
+  } else if (couponCode === "") {
+    alert("Use coupon code to get 20% off");
   } else {
     alert("Coupon Code is wrong");
     coupon.value = "";
